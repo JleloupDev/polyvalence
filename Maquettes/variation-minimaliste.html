@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyvalence - Jardinier, Laveur de Vitres, Paysagiste - Variation Minimaliste</title>
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .minimal-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .minimal-card:hover {
+            border-color: #000;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+        .line-accent {
+            position: relative;
+        }
+        .line-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #000;
+        }
+        .geometric-pattern {
+            background-image: 
+                linear-gradient(45deg, #f8f9fa 25%, transparent 25%),
+                linear-gradient(-45deg, #f8f9fa 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f8f9fa 75%),
+                linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        .btn-minimal {
+            background: #000;
+            color: #fff;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+        .btn-minimal:hover {
+            background: #fff;
+            color: #000;
+        }
+        .gallery-minimal {
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+        .gallery-minimal:hover {
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-bold text-black uppercase tracking-[0.2em]">
+                    <img src="../images/logo.png" alt="Polyvalence Logo" class="h-8 inline-block mr-3 filter grayscale">
+                    POLYVALENCE
+                </a>
+            </div>
+            <ul class="flex items-center space-x-12">
+                <li><a href="#services" class="text-gray-700 hover:text-black py-2 font-medium text-sm uppercase tracking-wide transition-colors">Services</a></li>
+                <li><a href="#gallery" class="text-gray-700 hover:text-black py-2 font-medium text-sm uppercase tracking-wide transition-colors">Galerie</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-black py-2 font-medium text-sm uppercase tracking-wide transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="bg-white geometric-pattern">
+        <div class="container mx-auto px-6 py-32 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-8xl font-light mb-8 text-black leading-none">
+                    POLYVALENCE
+                </h1>
+                <div class="w-32 h-px bg-black mx-auto mb-8"></div>
+                <p class="text-2xl text-gray-600 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+                    Excellence en jardinage, lavage de vitres<br>et aménagement paysager
+                </p>
+                <button class="btn-minimal px-8 py-3 text-sm uppercase tracking-wide font-medium">
+                    Découvrir
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <section id="services" class="py-32 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-6xl font-light text-black mb-4 line-accent inline-block">Services</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-16">
+                <div class="minimal-card p-12 text-center">
+                    <div class="w-12 h-12 border-2 border-black mx-auto mb-8"></div>
+                    <h3 class="text-2xl font-medium text-black mb-6 uppercase tracking-wide">Entretien</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg font-light">Services d'entretien de jardin pour maintenir votre espace extérieur dans un état impeccable.</p>
+                </div>
+                <div class="minimal-card p-12 text-center">
+                    <div class="w-12 h-12 border-2 border-black mx-auto mb-8 rotate-45"></div>
+                    <h3 class="text-2xl font-medium text-black mb-6 uppercase tracking-wide">Création</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg font-light">Conception et réalisation d'espaces paysagers sur mesure adaptés à vos besoins.</p>
+                </div>
+                <div class="minimal-card p-12 text-center">
+                    <div class="w-12 h-12 border-2 border-black mx-auto mb-8">
+                        <div class="w-full h-full bg-black transform rotate-12"></div>
+                    </div>
+                    <h3 class="text-2xl font-medium text-black mb-6 uppercase tracking-wide">Nettoyage</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg font-light">Service professionnel de lavage de vitres pour une transparence parfaite.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-6xl font-light text-black mb-4 line-accent inline-block">Réalisations</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="gallery-minimal overflow-hidden border border-gray-200 hover:border-black transition-all duration-500">
+                    <img src="../images/entretien1.jpg" alt="Entretien de jardin" class="w-full h-80 object-cover">
+                    <div class="p-6 bg-white border-t border-gray-100">
+                        <h4 class="font-medium text-black uppercase tracking-wide text-sm">01 / Entretien</h4>
+                    </div>
+                </div>
+                <div class="gallery-minimal overflow-hidden border border-gray-200 hover:border-black transition-all duration-500">
+                    <img src="../images/creation1.jpg" alt="Création paysagère" class="w-full h-80 object-cover">
+                    <div class="p-6 bg-white border-t border-gray-100">
+                        <h4 class="font-medium text-black uppercase tracking-wide text-sm">02 / Création</h4>
+                    </div>
+                </div>
+                <div class="gallery-minimal overflow-hidden border border-gray-200 hover:border-black transition-all duration-500">
+                    <img src="../images/lavage-vitres1.jpg" alt="Lavage de vitres" class="w-full h-80 object-cover">
+                    <div class="p-6 bg-white border-t border-gray-100">
+                        <h4 class="font-medium text-black uppercase tracking-wide text-sm">03 / Nettoyage</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="text-6xl font-light mb-4">Contact</h2>
+                <div class="w-32 h-px bg-white mx-auto"></div>
+            </div>
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="grid md:grid-cols-2 gap-16">
+                    <div>
+                        <h3 class="text-sm uppercase tracking-wide text-gray-400 mb-4">Téléphone</h3>
+                        <p class="text-2xl font-light">
+                            <a href="tel:+33612345678" class="hover:text-gray-300 transition-colors">06 12 34 56 78</a>
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm uppercase tracking-wide text-gray-400 mb-4">Email</h3>
+                        <p class="text-2xl font-light">
+                            <a href="mailto:paul.leloup@example.com" class="hover:text-gray-300 transition-colors">paul.leloup@example.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-200 text-center py-12">
+        <div class="container mx-auto px-6">
+            <p class="text-gray-600 text-sm uppercase tracking-wide">&copy; 2025 Polyvalence</p>
+            <p class="text-gray-400 text-xs mt-2">Design minimaliste</p>
+        </div>
+    </footer>
+</body>
+</html>

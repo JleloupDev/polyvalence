@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyvalence - Jardinier, Laveur de Vitres, Paysagiste - Variation Terracotta</title>
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .gradient-warm {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ff8a00 100%);
+        }
+        .terracotta-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 138, 0, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(245, 87, 108, 0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+        }
+        .service-warm {
+            background: linear-gradient(145deg, #fff5f0, #fef2f2);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 0 10px 25px rgba(245, 87, 108, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-warm:hover {
+            transform: translateY(-12px) rotate(1deg);
+            box-shadow: 0 25px 50px rgba(245, 87, 108, 0.25);
+            background: linear-gradient(145deg, #fff, #fef7f0);
+        }
+        .btn-warm {
+            background: linear-gradient(135deg, #ff8a00, #f5576c);
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-warm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.6);
+        }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Inter', sans-serif; }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body class="bg-orange-50 text-amber-900">
+    <nav class="bg-white/95 backdrop-blur-sm shadow-xl sticky top-0 z-50 border-b-4 border-orange-200">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-bold text-orange-700 hover:text-red-600 uppercase tracking-wider">
+                    <img src="../images/logo.png" alt="Polyvalence Logo" class="h-12 inline-block">
+                </a>
+            </div>
+            <ul class="flex items-center space-x-10">
+                <li><a href="#services" class="text-amber-800 hover:text-orange-600 py-2 font-semibold text-lg transition-all duration-300 border-b-2 border-transparent hover:border-orange-400">Services</a></li>
+                <li><a href="#gallery" class="text-amber-800 hover:text-orange-600 py-2 font-semibold text-lg transition-all duration-300 border-b-2 border-transparent hover:border-orange-400">Galerie</a></li>
+                <li><a href="#contact" class="text-amber-800 hover:text-orange-600 py-2 font-semibold text-lg transition-all duration-300 border-b-2 border-transparent hover:border-orange-400">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="relative text-center gradient-warm terracotta-pattern">
+        <div class="relative w-full min-h-[600px] flex items-center justify-center py-20">
+            <div class="bg-white/90 backdrop-blur-sm p-16 rounded-[3rem] shadow-2xl max-w-5xl mx-6 border-4 border-orange-200">
+                <h1 class="text-7xl font-bold mb-8 text-shadow">
+                    <span class="text-orange-800">Bienvenue chez</span><br>
+                    <span class="text-red-600 text-8xl">POLYVALENCE</span>
+                </h1>
+                <p class="text-2xl text-amber-700 leading-relaxed mb-8 font-medium">
+                    Votre artisan de confiance en jardinage, lavage de vitres et aménagement paysager.
+                </p>
+                <button class="btn-warm text-white px-10 py-4 rounded-full font-bold text-lg border-none">
+                    🌿 Découvrir notre savoir-faire
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <section id="services" class="py-28 bg-gradient-to-br from-orange-50 via-red-50 to-amber-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-bold text-center mb-24 text-red-800 text-shadow">Notre Expertise Artisanale</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="service-warm p-14 rounded-3xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl mb-8 flex items-center justify-center transform rotate-3">
+                        <span class="text-3xl">🌱</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-orange-700 mb-6">Entretien de Jardin</h3>
+                    <p class="text-amber-800 leading-relaxed text-lg">Nous prenons soin de votre jardin avec passion et expertise pour qu'il reste splendide en toutes saisons.</p>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Taille</span>
+                        <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Entretien</span>
+                    </div>
+                </div>
+                <div class="service-warm p-14 rounded-3xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl mb-8 flex items-center justify-center transform -rotate-2">
+                        <span class="text-3xl">🎨</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-red-700 mb-6">Création Paysagère</h3>
+                    <p class="text-amber-800 leading-relaxed text-lg">Nous concevons des espaces verts uniques qui reflètent votre personnalité et s'harmonisent avec votre habitat.</p>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-red-200 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Design</span>
+                        <span class="bg-pink-200 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Aménagement</span>
+                    </div>
+                </div>
+                <div class="service-warm p-14 rounded-3xl">
+                    <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl mb-8 flex items-center justify-center transform rotate-1">
+                        <span class="text-3xl">✨</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-amber-700 mb-6">Lavage de Vitres</h3>
+                    <p class="text-amber-800 leading-relaxed text-lg">Un service de nettoyage professionnel pour des vitres impeccables qui laissent entrer la lumière naturelle.</p>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">Professionnel</span>
+                        <span class="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">Précision</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-28 bg-gradient-to-r from-red-100 to-orange-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-bold text-center mb-24 text-red-800 text-shadow">Nos Créations Authentiques</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+                <div class="rounded-3xl overflow-hidden shadow-2xl hover:shadow-red-300/50 transition-all duration-700 transform hover:scale-110 hover:rotate-1 border-4 border-orange-200">
+                    <img src="../images/entretien1.jpg" alt="Entretien de jardin" class="w-full h-80 object-cover">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-orange-700">Entretien Expert</h4>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-2xl hover:shadow-red-300/50 transition-all duration-700 transform hover:scale-110 hover:-rotate-1 border-4 border-red-200">
+                    <img src="../images/creation1.jpg" alt="Création paysagère" class="w-full h-80 object-cover">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-red-700">Design Paysager</h4>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-2xl hover:shadow-red-300/50 transition-all duration-700 transform hover:scale-110 hover:rotate-1 border-4 border-amber-200">
+                    <img src="../images/lavage-vitres1.jpg" alt="Lavage de vitres" class="w-full h-80 object-cover">
+                    <div class="p-4 bg-white">
+                        <h4 class="font-bold text-amber-700">Nettoyage Pro</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-28 gradient-warm">
+        <div class="container mx-auto px-6">
+            <h2 class="text-6xl font-bold text-center mb-24 text-white text-shadow">Créons Ensemble</h2>
+            <div class="max-w-3xl mx-auto bg-white/95 backdrop-blur-sm p-20 rounded-[3rem] shadow-2xl text-center border-4 border-orange-200">
+                <div class="mb-8">
+                    <span class="text-6xl">📞</span>
+                </div>
+                <p class="text-orange-700 font-bold text-4xl mb-6">
+                    <a href="tel:+33612345678" class="hover:text-red-600 transition-colors">06 12 34 56 78</a>
+                </p>
+                <div class="mb-8">
+                    <span class="text-6xl">📧</span>
+                </div>
+                <p class="text-orange-700 font-bold text-4xl">
+                    <a href="mailto:paul.leloup@example.com" class="hover:text-red-600 transition-colors">paul.leloup@example.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-amber-900 text-orange-200 text-center p-16">
+        <p class="text-2xl font-bold">&copy; 2025 Polyvalence. Tous droits réservés.</p>
+        <p class="text-lg mt-4 opacity-90">Artisanat traditionnel, service moderne.</p>
+    </footer>
+</body>
+</html>
