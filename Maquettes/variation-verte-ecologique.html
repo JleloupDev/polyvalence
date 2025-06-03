@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyvalence - Jardinage & Paysagisme Écologique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a4d3a 0%, #0f5132 25%, #198754 50%, #20c997 75%, #b3f0e1 100%);
+            background-attachment: fixed;
+        }
+
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Animations éco-responsables */
+        @keyframes ecoGrow {
+            0% { transform: scale(0.95) rotate(-2deg); opacity: 0.8; }
+            50% { transform: scale(1.02) rotate(1deg); opacity: 1; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        @keyframes leafFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-8px) rotate(5deg); }
+            75% { transform: translateY(4px) rotate(-3deg); }
+        }
+
+        @keyframes carbonNeutral {
+            0% { box-shadow: 0 0 0 0 rgba(32, 201, 151, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(32, 201, 151, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(32, 201, 151, 0); }
+        }
+
+        .eco-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(32, 201, 151, 0.2);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .eco-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 81, 50, 0.15);
+            border-color: rgba(32, 201, 151, 0.4);
+        }
+
+        .eco-gradient {
+            background: linear-gradient(135deg, #20c997 0%, #198754 100%);
+        }
+
+        .carbon-neutral {
+            animation: carbonNeutral 2s infinite;
+        }
+
+        .leaf-animation {
+            animation: leafFloat 3s ease-in-out infinite;
+        }
+
+        .eco-btn {
+            background: linear-gradient(135deg, #198754 0%, #20c997 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .eco-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .eco-btn:hover::before {
+            left: 100%;
+        }
+
+        .organic-shape {
+            clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+        }
+
+        /* Pattern de feuilles éco */
+        .eco-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(32, 201, 151, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(25, 135, 84, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 70%, rgba(179, 240, 225, 0.1) 0%, transparent 50%);
+        }
+
+        .sustainability-badge {
+            background: linear-gradient(45deg, #198754, #20c997);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+    </style>
+</head>
+<body class="eco-pattern">
+    <!-- Navigation Éco-responsable -->
+    <nav class="fixed top-0 w-full z-50 eco-card shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 eco-gradient rounded-full flex items-center justify-center carbon-neutral">
+                        <i class="fas fa-leaf text-white text-lg"></i>
+                    </div>
+                    <span class="font-display text-2xl font-bold text-green-800">Polyvalence</span>
+                    <span class="sustainability-badge">
+                        <i class="fas fa-recycle"></i>
+                        100% Éco
+                    </span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-green-700 hover:text-green-500 font-medium transition-colors">🏡 Accueil</a>
+                    <a href="#services" class="text-green-700 hover:text-green-500 font-medium transition-colors">🌱 Services Verts</a>
+                    <a href="#galerie" class="text-green-700 hover:text-green-500 font-medium transition-colors">📸 Réalisations</a>
+                    <a href="#contact" class="text-green-700 hover:text-green-500 font-medium transition-colors">📞 Contact</a>
+                </div>
+                <button class="md:hidden text-green-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Écologique -->
+    <section id="accueil" class="pt-24 pb-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <div class="leaf-animation mb-8">
+                <div class="inline-block p-4 eco-gradient rounded-full carbon-neutral">
+                    <i class="fas fa-seedling text-white text-4xl"></i>
+                </div>
+            </div>
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6">
+                Jardinage
+                <span class="block eco-gradient bg-clip-text text-transparent">Éco-Responsable</span>
+            </h1>
+            <p class="text-xl text-green-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                🌍 Solutions durables pour votre jardin • Pratiques respectueuses de l'environnement • 
+                Certification carbone neutre • Biodiversité préservée
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <button class="eco-btn text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+                    <i class="fas fa-leaf mr-2"></i>
+                    Devis Écologique Gratuit
+                </button>
+                <button class="bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-full font-semibold border border-white/20 hover:bg-white/20 transition-all">
+                    <i class="fas fa-play mr-2"></i>
+                    Notre Démarche Verte
+                </button>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="eco-card p-4 text-center">
+                    <div class="text-2xl font-bold text-green-600">100%</div>
+                    <div class="text-sm text-green-700">♻️ Recyclé</div>
+                </div>
+                <div class="eco-card p-4 text-center">
+                    <div class="text-2xl font-bold text-green-600">0</div>
+                    <div class="text-sm text-green-700">🌍 Carbone</div>
+                </div>
+                <div class="eco-card p-4 text-center">
+                    <div class="text-2xl font-bold text-green-600">500+</div>
+                    <div class="text-sm text-green-700">🌱 Projets Verts</div>
+                </div>
+                <div class="eco-card p-4 text-center">
+                    <div class="text-2xl font-bold text-green-600">15</div>
+                    <div class="text-sm text-green-700">🏆 Certifications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Écologiques -->
+    <section id="services" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                    Services <span class="eco-gradient bg-clip-text text-transparent">100% Verts</span>
+                </h2>
+                <p class="text-xl text-green-100 max-w-3xl mx-auto">
+                    🌿 Chaque service conçu dans le respect de l'environnement et de la biodiversité
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="eco-card p-8 group">
+                    <div class="w-16 h-16 eco-gradient rounded-full flex items-center justify-center mb-6 carbon-neutral">
+                        <i class="fas fa-seedling text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-green-800 mb-4">🌱 Jardinage Bio</h3>
+                    <p class="text-green-600 mb-6">
+                        Permaculture, compostage naturel, semences biologiques et techniques ancestrales respectueuses.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="sustainability-badge text-xs">Zéro Pesticide</span>
+                        <span class="sustainability-badge text-xs">Compost Maison</span>
+                    </div>
+                    <div class="text-green-500 font-semibold">À partir de 75€ 🌿</div>
+                </div>
+
+                <div class="eco-card p-8 group">
+                    <div class="w-16 h-16 eco-gradient rounded-full flex items-center justify-center mb-6 carbon-neutral">
+                        <i class="fas fa-tree text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-green-800 mb-4">🌳 Aménagement Durable</h3>
+                    <p class="text-green-600 mb-6">
+                        Conception paysagère éco-responsable avec plantes locales et récupération d'eau de pluie.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="sustainability-badge text-xs">Plantes Locales</span>
+                        <span class="sustainability-badge text-xs">Récup. Eau</span>
+                    </div>
+                    <div class="text-green-500 font-semibold">À partir de 200€ 🏞️</div>
+                </div>
+
+                <div class="eco-card p-8 group">
+                    <div class="w-16 h-16 eco-gradient rounded-full flex items-center justify-center mb-6 carbon-neutral">
+                        <i class="fas fa-leaf text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-green-800 mb-4">♻️ Élagage Écologique</h3>
+                    <p class="text-green-600 mb-6">
+                        Taille respectueuse, recyclage des déchets verts en paillis et préservation de la biodiversité.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="sustainability-badge text-xs">Zéro Déchet</span>
+                        <span class="sustainability-badge text-xs">Bio-Paillis</span>
+                    </div>
+                    <div class="text-green-500 font-semibold">À partir de 120€ ✂️</div>
+                </div>
+
+                <div class="eco-card p-8 group">
+                    <div class="w-16 h-16 eco-gradient rounded-full flex items-center justify-center mb-6 carbon-neutral">
+                        <i class="fas fa-water text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-green-800 mb-4">💧 Arrosage Intelligent</h3>
+                    <p class="text-green-600 mb-6">
+                        Systèmes d'irrigation économes, capteurs d'humidité et programmation optimisée.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="sustainability-badge text-xs">-70% Eau</span>
+                        <span class="sustainability-badge text-xs">Smart Tech</span>
+                    </div>
+                    <div class="text-green-500 font-semibold">À partir de 300€ 🌊</div>
+                </div>
+
+                <div class="eco-card p-8 group">
+                    <div class="w-16 h-16 eco-gradient rounded-full flex items-center justify-center mb-6 carbon-neutral">
+                        <i class="fas fa-bug text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-green-800 mb-4">🐛 Lutte Bio-Intégrée</h3>
+                    <p class="text-green-600 mb-6">
+                        Protection naturelle des cultures avec auxiliaires et préparations biologiques.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="sustainability-badge text-xs">Auxiliaires</span>
+                        <span class="sustainability-badge text-xs">Biodiversité</span>
+                    </div>
+                    <div class="text-green-500 font-semibold">À partir de 90€ 🐞</div>
+                </div>
+
+                <div class="eco-card p-8 group">
+                    <div class="w-16 h-16 eco-gradient rounded-full flex items-center justify-center mb-6 carbon-neutral">
+                        <i class="fas fa-solar-panel text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-green-800 mb-4">☀️ Énergie Verte</h3>
+                    <p class="text-green-600 mb-6">
+                        Éclairage solaire, pompes écologiques et outils électriques à énergie renouvelable.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="sustainability-badge text-xs">100% Solaire</span>
+                        <span class="sustainability-badge text-xs">Autonome</span>
+                    </div>
+                    <div class="text-green-500 font-semibold">À partir de 250€ ⚡</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Éco-Responsable -->
+    <section id="galerie" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                    Nos <span class="eco-gradient bg-clip-text text-transparent">Réalisations Vertes</span>
+                </h2>
+                <p class="text-xl text-green-100 max-w-3xl mx-auto">
+                    🌍 Projets certifiés carbone neutre et respectueux de l'environnement
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="eco-card overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-br from-green-400 to-green-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-seedling text-4xl mb-2 leaf-animation"></i>
+                                <p class="font-semibold">Jardin Permaculture</p>
+                                <p class="text-sm opacity-80">🌱 100% Bio • Zéro Déchet</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-green-800 mb-2">Potager Autonome</h3>
+                        <p class="text-green-600 mb-4">Création d'un écosystème auto-suffisant avec compostage intégré.</p>
+                        <div class="flex gap-2">
+                            <span class="sustainability-badge text-xs">Carbone -50%</span>
+                            <span class="sustainability-badge text-xs">Biodiversité +200%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-br from-emerald-400 to-teal-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-tree text-4xl mb-2 leaf-animation"></i>
+                                <p class="font-semibold">Forêt Urbaine</p>
+                                <p class="text-sm opacity-80">🌳 Essences Locales • Air Pur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-green-800 mb-2">Micro-Forêt Miyawaki</h3>
+                        <p class="text-green-600 mb-4">Plantation dense d'espèces indigènes pour un écosystème riche.</p>
+                        <div class="flex gap-2">
+                            <span class="sustainability-badge text-xs">O2 Production</span>
+                            <span class="sustainability-badge text-xs">Îlot Fraîcheur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-br from-green-500 to-lime-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-water text-4xl mb-2 leaf-animation"></i>
+                                <p class="font-semibold">Récupération d'Eau</p>
+                                <p class="text-sm opacity-80">💧 -80% Consommation • Smart</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-green-800 mb-2">Système Aquaponique</h3>
+                        <p class="text-green-600 mb-4">Circuit fermé eau-plantes avec récupération d'eau de pluie.</p>
+                        <div class="flex gap-2">
+                            <span class="sustainability-badge text-xs">Économie d'Eau</span>
+                            <span class="sustainability-badge text-xs">Autonomie</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-br from-teal-400 to-green-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-leaf text-4xl mb-2 leaf-animation"></i>
+                                <p class="font-semibold">Toiture Végétalisée</p>
+                                <p class="text-sm opacity-80">🏠 Isolation • Biodiversité</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-green-800 mb-2">Toit Écologique</h3>
+                        <p class="text-green-600 mb-4">Végétalisation extensive avec plantes mellifères.</p>
+                        <div class="flex gap-2">
+                            <span class="sustainability-badge text-xs">Isolation +40%</span>
+                            <span class="sustainability-badge text-xs">Abeilles 🐝</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-br from-lime-400 to-green-500 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-solar-panel text-4xl mb-2 leaf-animation"></i>
+                                <p class="font-semibold">Jardin Solaire</p>
+                                <p class="text-sm opacity-80">☀️ Énergie Verte • Autonome</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-green-800 mb-2">Éclairage Photovoltaïque</h3>
+                        <p class="text-green-600 mb-4">Installation complète d'éclairage solaire intelligent.</p>
+                        <div class="flex gap-2">
+                            <span class="sustainability-badge text-xs">0 Électricité</span>
+                            <span class="sustainability-badge text-xs">Smart LED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="eco-card overflow-hidden group">
+                    <div class="h-64 bg-gradient-to-br from-emerald-500 to-teal-500 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-recycle text-4xl mb-2 leaf-animation"></i>
+                                <p class="font-semibold">Mobilier Recyclé</p>
+                                <p class="text-sm opacity-80">♻️ Upcycling • Design Unique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-green-800 mb-2">Aménagement Récup'</h3>
+                        <p class="text-green-600 mb-4">Création de mobilier de jardin à partir de matériaux recyclés.</p>
+                        <div class="flex gap-2">
+                            <span class="sustainability-badge text-xs">100% Récup</span>
+                            <span class="sustainability-badge text-xs">Design Original</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Éco-Responsable -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+                    Contact <span class="eco-gradient bg-clip-text text-transparent">Vert</span>
+                </h2>
+                <p class="text-xl text-green-100 max-w-3xl mx-auto">
+                    🌱 Parlons de votre projet écologique • Devis gratuit et conseils durables
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="eco-card p-8">
+                    <h3 class="font-display text-2xl font-semibold text-green-800 mb-6">📞 Informations</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 eco-gradient rounded-full flex items-center justify-center carbon-neutral">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-green-800">Téléphone Vert</p>
+                                <p class="text-green-600">📱 06 12 34 56 78</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 eco-gradient rounded-full flex items-center justify-center carbon-neutral">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-green-800">Email Éco</p>
+                                <p class="text-green-600">✉️ contact@polyvalence-eco.fr</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 eco-gradient rounded-full flex items-center justify-center carbon-neutral">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-green-800">Localisation Durable</p>
+                                <p class="text-green-600">🌍 Intervention Éco-Responsable</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-green-50 rounded-xl">
+                        <h4 class="font-semibold text-green-800 mb-4">🏆 Nos Certifications Écologiques</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center">
+                                <div class="text-green-600 text-2xl mb-1">🌱</div>
+                                <div class="text-sm font-medium text-green-700">Bio Certifié</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-green-600 text-2xl mb-1">♻️</div>
+                                <div class="text-sm font-medium text-green-700">Zéro Déchet</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-green-600 text-2xl mb-1">🌍</div>
+                                <div class="text-sm font-medium text-green-700">Carbone Neutre</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-green-600 text-2xl mb-1">🐝</div>
+                                <div class="text-sm font-medium text-green-700">Biodiversité</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="eco-card p-8">
+                    <h3 class="font-display text-2xl font-semibold text-green-800 mb-6">🌿 Devis Écologique</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-green-700 font-medium mb-2">Nom complet</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-green-500 focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-green-700 font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-green-500 focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-green-700 font-medium mb-2">Type de projet éco</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-green-500 focus:outline-none transition-colors">
+                                <option>🌱 Jardinage Bio</option>
+                                <option>🌳 Aménagement Durable</option>
+                                <option>♻️ Élagage Écologique</option>
+                                <option>💧 Arrosage Intelligent</option>
+                                <option>☀️ Énergie Verte</option>
+                                <option>🏠 Projet Complet Éco</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-green-700 font-medium mb-2">Description de votre projet vert</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-green-200 focus:border-green-500 focus:outline-none transition-colors"></textarea>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <input type="checkbox" id="eco-consent" class="text-green-600">
+                            <label for="eco-consent" class="text-green-600 text-sm">
+                                J'accepte de recevoir des conseils écologiques et informations durables
+                            </label>
+                        </div>
+                        <button type="submit" class="w-full eco-btn text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105">
+                            <i class="fas fa-seedling mr-2"></i>
+                            Demander un Devis Vert Gratuit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Écologique -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-6">
+                    <div class="w-12 h-12 eco-gradient rounded-full flex items-center justify-center carbon-neutral">
+                        <i class="fas fa-leaf text-white text-xl"></i>
+                    </div>
+                    <span class="font-display text-3xl font-bold text-white">Polyvalence</span>
+                    <span class="sustainability-badge">
+                        <i class="fas fa-heart text-red-400"></i>
+                        Planète
+                    </span>
+                </div>
+                <p class="text-green-100 mb-8 max-w-2xl mx-auto">
+                    🌍 Jardinage et paysagisme 100% écologique • Engagement carbone neutre • 
+                    Biodiversité préservée • Solutions durables pour un avenir vert
+                </p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green-500 transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green-500 transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green-500 transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green-500 transition-colors">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="text-green-100 text-sm">
+                    © 2024 Polyvalence Écologique. Tous droits réservés. 
+                    <span class="sustainability-badge text-xs ml-2">
+                        <i class="fas fa-leaf"></i>
+                        Site Carbon Neutral
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation éco-responsable au scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const ecoCards = document.querySelectorAll('.eco-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'ecoGrow 0.8s ease-out forwards';
+                    }
+                });
+            }, observerOptions);
+            
+            ecoCards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Navigation douce
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

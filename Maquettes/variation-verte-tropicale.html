@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyvalence - Jardinage Tropical & Exotique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #004d40 0%, #00695c 20%, #00796b 40%, #26a69a 60%, #4db6ac 80%, #80cbc4 100%);
+            background-attachment: fixed;
+        }
+
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Animations tropicales */
+        @keyframes tropicalSway {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(10px) rotate(2deg); }
+            75% { transform: translateX(-8px) rotate(-1deg); }
+        }
+
+        @keyframes palmWave {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        @keyframes tropicalGlow {
+            0% { box-shadow: 0 0 20px rgba(77, 182, 172, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(38, 166, 154, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(77, 182, 172, 0.3); }
+        }
+
+        @keyframes jungleBreath {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        .tropical-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 248, 255, 0.9) 100%);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(77, 182, 172, 0.3);
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tropical-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #26a69a 0%, #4db6ac 50%, #80cbc4 100%);
+        }
+
+        .tropical-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 77, 64, 0.2);
+            border-color: rgba(38, 166, 154, 0.6);
+        }
+
+        .tropical-gradient {
+            background: linear-gradient(135deg, #00796b 0%, #26a69a 50%, #4db6ac 100%);
+        }
+
+        .jungle-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(77, 182, 172, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(38, 166, 154, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(128, 203, 196, 0.1) 0%, transparent 50%);
+        }
+
+        .palm-animation {
+            animation: palmWave 4s ease-in-out infinite;
+        }
+
+        .tropical-sway {
+            animation: tropicalSway 6s ease-in-out infinite;
+        }
+
+        .tropical-glow {
+            animation: tropicalGlow 3s ease-in-out infinite;
+        }
+
+        .jungle-breath {
+            animation: jungleBreath 4s ease-in-out infinite;
+        }
+
+        .tropical-btn {
+            background: linear-gradient(135deg, #00796b 0%, #26a69a 50%, #4db6ac 100%);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .tropical-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.8s;
+        }
+
+        .tropical-btn:hover::before {
+            left: 100%;
+        }
+
+        .exotic-leaf {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.1;
+            color: #26a69a;
+            animation: tropicalSway 8s ease-in-out infinite;
+        }
+
+        .exotic-leaf:nth-child(odd) {
+            animation-delay: -2s;
+        }
+
+        .tropical-badge {
+            background: linear-gradient(45deg, #00796b, #26a69a);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 15px rgba(0, 121, 107, 0.3);
+        }
+
+        .paradise-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .paradise-section::before {
+            content: '🌴';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            font-size: 3rem;
+            opacity: 0.1;
+            animation: tropicalSway 10s ease-in-out infinite;
+        }
+
+        .paradise-section::after {
+            content: '🌺';
+            position: absolute;
+            bottom: 20px;
+            right: 10%;
+            font-size: 2.5rem;
+            opacity: 0.15;
+            animation: tropicalSway 8s ease-in-out infinite reverse;
+        }
+    </style>
+</head>
+<body class="jungle-pattern">
+    <!-- Navigation Tropicale -->
+    <nav class="fixed top-0 w-full z-50 tropical-card shadow-xl">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 tropical-gradient rounded-full flex items-center justify-center tropical-glow">
+                        <i class="fas fa-seedling text-white text-xl palm-animation"></i>
+                    </div>
+                    <span class="font-display text-3xl font-bold text-teal-800">Polyvalence</span>
+                    <span class="tropical-badge">
+                        <i class="fas fa-leaf"></i>
+                        Tropical
+                    </span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-teal-700 hover:text-teal-500 font-medium transition-colors">🏝️ Accueil</a>
+                    <a href="#services" class="text-teal-700 hover:text-teal-500 font-medium transition-colors">🌺 Services Exotiques</a>
+                    <a href="#galerie" class="text-teal-700 hover:text-teal-500 font-medium transition-colors">📸 Paradis Créés</a>
+                    <a href="#contact" class="text-teal-700 hover:text-teal-500 font-medium transition-colors">📞 Contact</a>
+                </div>
+                <button class="md:hidden text-teal-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Paradisiaque -->
+    <section id="accueil" class="pt-24 pb-20 paradise-section">
+        <div class="container mx-auto px-6 text-center">
+            <div class="palm-animation mb-8">
+                <div class="inline-block p-6 tropical-gradient rounded-full tropical-glow">
+                    <i class="fas fa-palm-tree text-white text-5xl"></i>
+                </div>
+            </div>
+            <h1 class="font-display text-6xl md:text-8xl font-bold text-white mb-6">
+                Jardins
+                <span class="block tropical-gradient bg-clip-text text-transparent">Tropicaux</span>
+            </h1>
+            <p class="text-xl text-teal-100 mb-8 max-w-4xl mx-auto leading-relaxed font-light">
+                🌺 Créez votre oasis exotique • Plantes tropicales luxuriantes • 
+                Aménagements paradisiaques • L'évasion à domicile 🌴
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <button class="tropical-btn text-white px-10 py-5 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 jungle-breath">
+                    <i class="fas fa-palm-tree mr-2"></i>
+                    Créer Mon Paradis
+                </button>
+                <button class="bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-full font-semibold border border-white/30 hover:bg-white/20 transition-all">
+                    <i class="fas fa-play mr-2"></i>
+                    Visite Virtuelle
+                </button>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="tropical-card p-6 text-center tropical-sway">
+                    <div class="text-3xl font-bold text-teal-600">250+</div>
+                    <div class="text-sm text-teal-700">🌴 Palmiers Plantés</div>
+                </div>
+                <div class="tropical-card p-6 text-center tropical-sway" style="animation-delay: -1s;">
+                    <div class="text-3xl font-bold text-teal-600">50+</div>
+                    <div class="text-sm text-teal-700">🌺 Espèces Exotiques</div>
+                </div>
+                <div class="tropical-card p-6 text-center tropical-sway" style="animation-delay: -2s;">
+                    <div class="text-3xl font-bold text-teal-600">15°</div>
+                    <div class="text-sm text-teal-700">🌡️ Îlots de Fraîcheur</div>
+                </div>
+                <div class="tropical-card p-6 text-center tropical-sway" style="animation-delay: -3s;">
+                    <div class="text-3xl font-bold text-teal-600">100%</div>
+                    <div class="text-sm text-teal-700">😍 Évasion Garantie</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Exotiques -->
+    <section id="services" class="py-20 paradise-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+                    Services <span class="tropical-gradient bg-clip-text text-transparent">Paradisiaques</span>
+                </h2>
+                <p class="text-xl text-teal-100 max-w-4xl mx-auto font-light">
+                    🏖️ Transformez votre espace en véritable évasion tropicale
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="tropical-card p-8 group">
+                    <div class="w-20 h-20 tropical-gradient rounded-full flex items-center justify-center mb-6 tropical-glow palm-animation">
+                        <i class="fas fa-palm-tree text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-teal-800 mb-4">🌴 Plantation Palmiers</h3>
+                    <p class="text-teal-600 mb-6 leading-relaxed">
+                        Phoenix, Washingtonia, Trachycarpus... Créez votre forêt de palmiers avec des espèces adaptées à votre climat.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tropical-badge text-xs">Résistant au Froid</span>
+                        <span class="tropical-badge text-xs">Croissance Rapide</span>
+                    </div>
+                    <div class="text-teal-500 font-semibold text-lg">À partir de 180€ 🌴</div>
+                </div>
+
+                <div class="tropical-card p-8 group">
+                    <div class="w-20 h-20 tropical-gradient rounded-full flex items-center justify-center mb-6 tropical-glow palm-animation" style="animation-delay: -1s;">
+                        <i class="fas fa-spa text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-teal-800 mb-4">🌺 Jardin Exotique</h3>
+                    <p class="text-teal-600 mb-6 leading-relaxed">
+                        Bougainvilliers, hibiscus, bananiers... Composition luxuriante avec plantes tropicales colorées et parfumées.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tropical-badge text-xs">Floraison Continue</span>
+                        <span class="tropical-badge text-xs">Parfums Enivrants</span>
+                    </div>
+                    <div class="text-teal-500 font-semibold text-lg">À partir de 350€ 🌺</div>
+                </div>
+
+                <div class="tropical-card p-8 group">
+                    <div class="w-20 h-20 tropical-gradient rounded-full flex items-center justify-center mb-6 tropical-glow palm-animation" style="animation-delay: -2s;">
+                        <i class="fas fa-water text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-teal-800 mb-4">🏝️ Bassin Tropical</h3>
+                    <p class="text-teal-600 mb-6 leading-relaxed">
+                        Cascade naturelle, nénuphars exotiques, poissons tropicaux... Votre lagon privé avec système de filtration.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tropical-badge text-xs">Cascade Naturelle</span>
+                        <span class="tropical-badge text-xs">Éco-Système</span>
+                    </div>
+                    <div class="text-teal-500 font-semibold text-lg">À partir de 800€ 💧</div>
+                </div>
+
+                <div class="tropical-card p-8 group">
+                    <div class="w-20 h-20 tropical-gradient rounded-full flex items-center justify-center mb-6 tropical-glow palm-animation" style="animation-delay: -3s;">
+                        <i class="fas fa-umbrella-beach text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-teal-800 mb-4">🏖️ Coin Détente Bali</h3>
+                    <p class="text-teal-600 mb-6 leading-relaxed">
+                        Pergola en bambou, mobilier exotique, hamac suspendu... Créez votre spa extérieur inspiré de Bali.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tropical-badge text-xs">Bambou Naturel</span>
+                        <span class="tropical-badge text-xs">Zen Attitude</span>
+                    </div>
+                    <div class="text-teal-500 font-semibold text-lg">À partir de 650€ 🧘‍♀️</div>
+                </div>
+
+                <div class="tropical-card p-8 group">
+                    <div class="w-20 h-20 tropical-gradient rounded-full flex items-center justify-center mb-6 tropical-glow palm-animation" style="animation-delay: -4s;">
+                        <i class="fas fa-seedling text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-teal-800 mb-4">🌿 Mur Végétal Tropical</h3>
+                    <p class="text-teal-600 mb-6 leading-relaxed">
+                        Fougères arborescentes, broméliacées, orchidées... Mur végétalisé avec irrigation automatique.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tropical-badge text-xs">Irrigation Auto</span>
+                        <span class="tropical-badge text-xs">Air Purifié</span>
+                    </div>
+                    <div class="text-teal-500 font-semibold text-lg">À partir de 450€ 🌿</div>
+                </div>
+
+                <div class="tropical-card p-8 group">
+                    <div class="w-20 h-20 tropical-gradient rounded-full flex items-center justify-center mb-6 tropical-glow palm-animation" style="animation-delay: -5s;">
+                        <i class="fas fa-lightbulb text-white text-3xl"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-teal-800 mb-4">✨ Éclairage Féérique</h3>
+                    <p class="text-teal-600 mb-6 leading-relaxed">
+                        Guirlandes LED, spots colorés, projecteurs sur palmiers... Illumination magique pour soirées tropicales.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tropical-badge text-xs">LED Couleurs</span>
+                        <span class="tropical-badge text-xs">Ambiance Fête</span>
+                    </div>
+                    <div class="text-teal-500 font-semibold text-lg">À partir de 280€ ✨</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Paradisiaque -->
+    <section id="galerie" class="py-20 paradise-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+                    Nos <span class="tropical-gradient bg-clip-text text-transparent">Paradis Créés</span>
+                </h2>
+                <p class="text-xl text-teal-100 max-w-4xl mx-auto font-light">
+                    🏝️ Découvrez nos réalisations d'exception qui transforment chaque jardin en évasion tropicale
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="tropical-card overflow-hidden group">
+                    <div class="h-72 bg-gradient-to-br from-teal-400 via-green-500 to-emerald-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="palm-animation mb-4">
+                                    <i class="fas fa-palm-tree text-6xl"></i>
+                                </div>
+                                <p class="font-display text-xl font-semibold">Oasis Palmier Royal</p>
+                                <p class="text-sm opacity-90 mt-2">🌴 Phoenix Canariensis • Cascade</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-teal-800 mb-3">Villa Côte d'Azur</h3>
+                        <p class="text-teal-600 mb-4">Transformation complète avec palmiers centenaires et bassin à débordement.</p>
+                        <div class="flex gap-2">
+                            <span class="tropical-badge text-xs">Palmiers Royaux</span>
+                            <span class="tropical-badge text-xs">Lagon Privé</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tropical-card overflow-hidden group">
+                    <div class="h-72 bg-gradient-to-br from-pink-400 via-red-500 to-orange-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="palm-animation mb-4">
+                                    <i class="fas fa-spa text-6xl"></i>
+                                </div>
+                                <p class="font-display text-xl font-semibold">Jardin Hibiscus Paradise</p>
+                                <p class="text-sm opacity-90 mt-2">🌺 Floraison Continue • Parfums</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-teal-800 mb-3">Maison Contemporaine</h3>
+                        <p class="text-teal-600 mb-4">Massifs d'hibiscus multicolores avec système d'arrosage automatique.</p>
+                        <div class="flex gap-2">
+                            <span class="tropical-badge text-xs">20 Variétés</span>
+                            <span class="tropical-badge text-xs">Fleurs Géantes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tropical-card overflow-hidden group">
+                    <div class="h-72 bg-gradient-to-br from-blue-400 via-cyan-500 to-teal-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="palm-animation mb-4">
+                                    <i class="fas fa-water text-6xl"></i>
+                                </div>
+                                <p class="font-display text-xl font-semibold">Lagon Tropical Privé</p>
+                                <p class="text-sm opacity-90 mt-2">🏝️ Cascade 3m • Poissons Exotiques</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-teal-800 mb-3">Résidence de Prestige</h3>
+                        <p class="text-teal-600 mb-4">Bassin naturel avec plage de sable et végétation tropicale luxuriante.</p>
+                        <div class="flex gap-2">
+                            <span class="tropical-badge text-xs">Plage Privée</span>
+                            <span class="tropical-badge text-xs">Éco-Système</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tropical-card overflow-hidden group">
+                    <div class="h-72 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="palm-animation mb-4">
+                                    <i class="fas fa-seedling text-6xl"></i>
+                                </div>
+                                <p class="font-display text-xl font-semibold">Jungle Verticale</p>
+                                <p class="text-sm opacity-90 mt-2">🌿 4m de Hauteur • 50 Espèces</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-teal-800 mb-3">Loft Urbain</h3>
+                        <p class="text-teal-600 mb-4">Mur végétal tropical avec broméliacées et orchidées rares.</p>
+                        <div class="flex gap-2">
+                            <span class="tropical-badge text-xs">Orchidées Rares</span>
+                            <span class="tropical-badge text-xs">Air Pur 24h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tropical-card overflow-hidden group">
+                    <div class="h-72 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="palm-animation mb-4">
+                                    <i class="fas fa-umbrella-beach text-6xl"></i>
+                                </div>
+                                <p class="font-display text-xl font-semibold">Spa Balinais</p>
+                                <p class="text-sm opacity-90 mt-2">🧘‍♀️ Bambou • Zen Attitude</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-teal-800 mb-3">Villa avec Piscine</h3>
+                        <p class="text-teal-600 mb-4">Espace détente inspiré de Bali avec pergola bambou et bassins zen.</p>
+                        <div class="flex gap-2">
+                            <span class="tropical-badge text-xs">Bambou Géant</span>
+                            <span class="tropical-badge text-xs">Méditation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tropical-card overflow-hidden group">
+                    <div class="h-72 bg-gradient-to-br from-purple-400 via-pink-500 to-red-600 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="palm-animation mb-4">
+                                    <i class="fas fa-lightbulb text-6xl"></i>
+                                </div>
+                                <p class="font-display text-xl font-semibold">Jardin Magique Nocturne</p>
+                                <p class="text-sm opacity-90 mt-2">✨ 500 LED • Couleurs Changeantes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold text-teal-800 mb-3">Restaurant Tropical</h3>
+                        <p class="text-teal-600 mb-4">Éclairage féérique avec guirlandes LED et jeux de couleurs programmables.</p>
+                        <div class="flex gap-2">
+                            <span class="tropical-badge text-xs">Soirées Magiques</span>
+                            <span class="tropical-badge text-xs">RGB Control</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Tropical -->
+    <section id="contact" class="py-20 paradise-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+                    Contact <span class="tropical-gradient bg-clip-text text-transparent">Paradis</span>
+                </h2>
+                <p class="text-xl text-teal-100 max-w-4xl mx-auto font-light">
+                    🏖️ Parlons de votre projet d'évasion • Devis gratuit et conseils d'expert en jardinage tropical
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div class="tropical-card p-8">
+                    <h3 class="font-display text-3xl font-semibold text-teal-800 mb-8">🌴 Informations</h3>
+                    <div class="space-y-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 tropical-gradient rounded-full flex items-center justify-center tropical-glow">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-teal-800 text-lg">Téléphone Tropical</p>
+                                <p class="text-teal-600">📱 06 12 34 56 78</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 tropical-gradient rounded-full flex items-center justify-center tropical-glow">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-teal-800 text-lg">Email Paradis</p>
+                                <p class="text-teal-600">✉️ paradis@polyvalence-tropical.fr</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 tropical-gradient rounded-full flex items-center justify-center tropical-glow">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-teal-800 text-lg">Zone Intervention</p>
+                                <p class="text-teal-600">🌍 Toute la Côte Méditerranéenne</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 p-8 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl">
+                        <h4 class="font-display text-xl font-semibold text-teal-800 mb-6">🏆 Nos Spécialités Exotiques</h4>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center tropical-sway">
+                                <div class="text-teal-600 text-4xl mb-2">🌴</div>
+                                <div class="text-sm font-medium text-teal-700">Palmiers Résistants</div>
+                            </div>
+                            <div class="text-center tropical-sway" style="animation-delay: -1s;">
+                                <div class="text-teal-600 text-4xl mb-2">🌺</div>
+                                <div class="text-sm font-medium text-teal-700">Fleurs Tropicales</div>
+                            </div>
+                            <div class="text-center tropical-sway" style="animation-delay: -2s;">
+                                <div class="text-teal-600 text-4xl mb-2">🏝️</div>
+                                <div class="text-sm font-medium text-teal-700">Lagons Privés</div>
+                            </div>
+                            <div class="text-center tropical-sway" style="animation-delay: -3s;">
+                                <div class="text-teal-600 text-4xl mb-2">🧘‍♀️</div>
+                                <div class="text-sm font-medium text-teal-700">Espaces Zen</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tropical-card p-8">
+                    <h3 class="font-display text-3xl font-semibold text-teal-800 mb-8">🌺 Créer Mon Paradis</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-teal-700 font-medium mb-3 text-lg">Nom complet</label>
+                            <input type="text" class="w-full px-4 py-4 rounded-xl border-2 border-teal-200 focus:border-teal-500 focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-teal-700 font-medium mb-3 text-lg">Email</label>
+                            <input type="email" class="w-full px-4 py-4 rounded-xl border-2 border-teal-200 focus:border-teal-500 focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-teal-700 font-medium mb-3 text-lg">Projet tropical souhaité</label>
+                            <select class="w-full px-4 py-4 rounded-xl border-2 border-teal-200 focus:border-teal-500 focus:outline-none transition-colors">
+                                <option>🌴 Plantation de Palmiers</option>
+                                <option>🌺 Jardin Exotique Complet</option>
+                                <option>🏝️ Bassin Tropical avec Cascade</option>
+                                <option>🧘‍♀️ Espace Détente Balinais</option>
+                                <option>✨ Éclairage Féérique</option>
+                                <option>🏖️ Transformation Complète en Paradis</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-teal-700 font-medium mb-3 text-lg">Décrivez votre rêve tropical</label>
+                            <textarea rows="4" class="w-full px-4 py-4 rounded-xl border-2 border-teal-200 focus:border-teal-500 focus:outline-none transition-colors" placeholder="Palmiers centenaires, lagon avec cascade, spa balinais..."></textarea>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <input type="checkbox" id="tropical-consent" class="text-teal-600">
+                            <label for="tropical-consent" class="text-teal-600 text-sm">
+                                J'accepte de recevoir des inspirations tropicales et conseils d'expert
+                            </label>
+                        </div>
+                        <button type="submit" class="w-full tropical-btn text-white py-5 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 jungle-breath">
+                            <i class="fas fa-palm-tree mr-2"></i>
+                            Demander Mon Devis Paradis Gratuit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Paradisiaque -->
+    <footer class="py-16 border-t border-white/10 paradise-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-8">
+                    <div class="w-16 h-16 tropical-gradient rounded-full flex items-center justify-center tropical-glow palm-animation">
+                        <i class="fas fa-palm-tree text-white text-2xl"></i>
+                    </div>
+                    <span class="font-display text-4xl font-bold text-white">Polyvalence</span>
+                    <span class="tropical-badge text-lg px-4 py-2">
+                        <i class="fas fa-heart text-pink-400"></i>
+                        Tropical
+                    </span>
+                </div>
+                <p class="text-teal-100 mb-10 max-w-3xl mx-auto text-lg leading-relaxed font-light">
+                    🏝️ Spécialistes du jardinage tropical et exotique • Créateurs d'oasis paradisiaques • 
+                    L'évasion tropicale à domicile • Palmiers, lagons et jardins de rêve 🌴
+                </p>
+                <div class="flex justify-center space-x-6 mb-10">
+                    <a href="#" class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-teal-500 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-teal-500 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-teal-500 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="#" class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-teal-500 transition-all duration-300 hover:scale-110">
+                        <i class="fab fa-pinterest text-xl"></i>
+                    </a>
+                </div>
+                <div class="text-teal-100 text-sm">
+                    © 2024 Polyvalence Tropical. Tous droits réservés. 
+                    <span class="tropical-badge text-xs ml-3">
+                        <i class="fas fa-palm-tree"></i>
+                        Paradis Garanti
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animations tropicales au scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const tropicalCards = document.querySelectorAll('.tropical-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            tropicalCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(card);
+            });
+            
+            // Navigation douce
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Effet parallaxe léger sur les éléments tropicaux
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                const tropicalElements = document.querySelectorAll('.palm-animation');
+                
+                tropicalElements.forEach((element, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    element.style.transform = `translateY(${scrollY * speed * 0.1}px)`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

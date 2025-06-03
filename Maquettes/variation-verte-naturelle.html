@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyvalence - Jardinier, Laveur de Vitres, Paysagiste - Variation Naturelle</title>
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .nature-gradient {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 50%, #15803d 100%);
+        }
+        .leaf-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 80% 20%, rgba(22, 163, 74, 0.1) 2px, transparent 2px),
+                radial-gradient(circle at 40% 40%, rgba(21, 128, 61, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px, 80px 80px, 40px 40px;
+        }
+        .natural-card {
+            background: linear-gradient(145deg, #f0fdf4, #ecfdf5);
+            border: 2px solid #bbf7d0;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        .natural-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.03) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        .natural-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) scale(1.1);
+        }
+        .natural-card:hover {
+            transform: translateY(-15px) rotate(-1deg);
+            box-shadow: 0 30px 60px rgba(34, 197, 94, 0.25);
+            background: linear-gradient(145deg, #f0fdf4, #dcfce7);
+            border-color: #22c55e;
+        }
+        .organic-btn {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .organic-btn::before {
+            content: '🌱';
+            position: absolute;
+            top: 50%;
+            left: -30px;
+            transform: translateY(-50%);
+            transition: left 0.3s ease;
+        }
+        .organic-btn:hover::before {
+            left: 10px;
+        }
+        .organic-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.6);
+            padding-left: 3rem;
+        }
+        .growing-icon {
+            animation: grow 2s ease-in-out infinite;
+        }
+        @keyframes grow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .leaf-floating {
+            animation: leafFloat 3s ease-in-out infinite;
+        }
+        @keyframes leafFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-5px) rotate(2deg); }
+            66% { transform: translateY(5px) rotate(-2deg); }
+        }
+        h1, h2 { font-family: 'Merriweather', serif; }
+        body { font-family: 'Open Sans', sans-serif; }
+        .text-shadow-soft { text-shadow: 2px 2px 8px rgba(0,0,0,0.3); }
+        .nature-border {
+            border-image: linear-gradient(45deg, #22c55e, #16a34a, #15803d) 1;
+        }
+    </style>
+</head>
+<body class="bg-green-50 text-green-900 leaf-pattern">
+    <nav class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-4 nature-border">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-bold text-green-700 hover:text-green-600 uppercase tracking-wider flex items-center">
+                    <img src="../images/logo.png" alt="Polyvalence Logo" class="h-12 inline-block mr-3 growing-icon">
+                    <span class="leaf-floating">🌿 POLYVALENCE</span>
+                </a>
+            </div>
+            <ul class="flex items-center space-x-10">
+                <li><a href="#services" class="text-green-800 hover:text-green-600 py-2 font-semibold text-lg transition-all duration-300 border-b-2 border-transparent hover:border-green-400">🌱 Services</a></li>
+                <li><a href="#gallery" class="text-green-800 hover:text-green-600 py-2 font-semibold text-lg transition-all duration-300 border-b-2 border-transparent hover:border-green-400">🌻 Galerie</a></li>
+                <li><a href="#contact" class="text-green-800 hover:text-green-600 py-2 font-semibold text-lg transition-all duration-300 border-b-2 border-transparent hover:border-green-400">🍃 Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="relative text-center nature-gradient leaf-pattern">
+        <div class="relative w-full min-h-[650px] flex items-center justify-center py-20">
+            <div class="bg-white/90 backdrop-blur-sm p-20 rounded-[4rem] shadow-2xl max-w-6xl mx-6 border-4 border-green-200 relative">
+                <div class="absolute -top-6 -left-6 text-6xl animate-bounce">🌱</div>
+                <div class="absolute -top-6 -right-6 text-6xl animate-pulse">🌿</div>
+                <div class="absolute -bottom-6 -left-6 text-6xl animate-bounce" style="animation-delay: 1s;">🌻</div>
+                <div class="absolute -bottom-6 -right-6 text-6xl animate-pulse" style="animation-delay: 0.5s;">🍃</div>
+                
+                <h1 class="text-8xl font-bold mb-8 text-shadow-soft">
+                    <span class="text-green-800">Bienvenue dans</span><br>
+                    <span class="text-green-600 text-9xl">POLYVALENCE</span>
+                </h1>
+                <p class="text-2xl text-green-700 leading-relaxed mb-10 font-medium">
+                    🌿 Votre partenaire nature pour un jardinage authentique et respectueux de l'environnement 🌿
+                </p>
+                <button class="organic-btn text-white px-12 py-5 rounded-full font-bold text-lg border-none relative">
+                    Cultiver ensemble
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <section id="services" class="py-32 bg-gradient-to-br from-green-50 via-emerald-50 to-lime-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-7xl font-bold text-center mb-8 text-green-800 text-shadow-soft">🌱 Notre Expertise Nature</h2>
+            <p class="text-center text-xl text-green-700 mb-24 max-w-4xl mx-auto font-medium">
+                Passionnés par la nature, nous mettons notre savoir-faire au service de vos espaces verts avec respect et authenticité
+            </p>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="natural-card p-16 rounded-[2rem] relative z-10">
+                    <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full mb-8 flex items-center justify-center shadow-xl growing-icon">
+                        <span class="text-4xl">🌱</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-green-700 mb-6">🌿 Entretien Naturel</h3>
+                    <p class="text-green-800 leading-relaxed text-lg mb-6">Un entretien respectueux de la biodiversité pour préserver l'équilibre naturel de votre jardin en toutes saisons.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-green-200 text-green-800 px-4 py-2 rounded-full text-sm font-medium">🌱 Bio</span>
+                        <span class="bg-emerald-200 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium">🌿 Naturel</span>
+                        <span class="bg-lime-200 text-lime-800 px-4 py-2 rounded-full text-sm font-medium">🌻 Durable</span>
+                    </div>
+                </div>
+                <div class="natural-card p-16 rounded-[2rem] relative z-10">
+                    <div class="w-24 h-24 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full mb-8 flex items-center justify-center shadow-xl growing-icon" style="animation-delay: 0.5s;">
+                        <span class="text-4xl">🌻</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-emerald-700 mb-6">🎨 Création Harmonieuse</h3>
+                    <p class="text-green-800 leading-relaxed text-lg mb-6">Conception d'espaces verts qui s'intègrent parfaitement dans leur environnement en respectant la nature locale.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-emerald-200 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium">🎨 Design</span>
+                        <span class="bg-green-200 text-green-800 px-4 py-2 rounded-full text-sm font-medium">🌿 Écologie</span>
+                        <span class="bg-lime-200 text-lime-800 px-4 py-2 rounded-full text-sm font-medium">🌱 Local</span>
+                    </div>
+                </div>
+                <div class="natural-card p-16 rounded-[2rem] relative z-10">
+                    <div class="w-24 h-24 bg-gradient-to-br from-lime-400 to-green-500 rounded-full mb-8 flex items-center justify-center shadow-xl growing-icon" style="animation-delay: 1s;">
+                        <span class="text-4xl">✨</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-lime-700 mb-6">💧 Nettoyage Écologique</h3>
+                    <p class="text-green-800 leading-relaxed text-lg mb-6">Service de lavage de vitres avec des produits écologiques pour préserver l'environnement et votre santé.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-lime-200 text-lime-800 px-4 py-2 rounded-full text-sm font-medium">💧 Écolo</span>
+                        <span class="bg-green-200 text-green-800 px-4 py-2 rounded-full text-sm font-medium">✨ Pure</span>
+                        <span class="bg-emerald-200 text-emerald-800 px-4 py-2 rounded-full text-sm font-medium">🌿 Naturel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-32 bg-gradient-to-r from-emerald-100 to-green-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-7xl font-bold text-center mb-8 text-green-800 text-shadow-soft">🌻 Nos Jardins Fleuris</h2>
+            <p class="text-center text-xl text-green-700 mb-24 max-w-4xl mx-auto font-medium">
+                Découvrez nos créations qui célèbrent la beauté naturelle et la biodiversité
+            </p>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
+                <div class="rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-green-300/50 transition-all duration-700 transform hover:scale-110 hover:rotate-2 border-4 border-green-200 bg-white">
+                    <img src="../images/entretien1.jpg" alt="Entretien de jardin" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h4 class="font-bold text-green-700 text-lg flex items-center">🌱 Entretien Naturel</h4>
+                        <p class="text-green-600 text-sm mt-2">Respectueux de la biodiversité</p>
+                    </div>
+                </div>
+                <div class="rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-green-300/50 transition-all duration-700 transform hover:scale-110 hover:-rotate-2 border-4 border-emerald-200 bg-white">
+                    <img src="../images/creation1.jpg" alt="Création paysagère" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h4 class="font-bold text-emerald-700 text-lg flex items-center">🌻 Création Paysagère</h4>
+                        <p class="text-emerald-600 text-sm mt-2">Harmonie avec la nature</p>
+                    </div>
+                </div>
+                <div class="rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-green-300/50 transition-all duration-700 transform hover:scale-110 hover:rotate-1 border-4 border-lime-200 bg-white">
+                    <img src="../images/lavage-vitres1.jpg" alt="Lavage de vitres" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h4 class="font-bold text-lime-700 text-lg flex items-center">💧 Nettoyage Écolo</h4>
+                        <p class="text-lime-600 text-sm mt-2">Produits respectueux</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 nature-gradient relative overflow-hidden">
+        <div class="absolute inset-0 leaf-pattern opacity-30"></div>
+        <div class="relative container mx-auto px-6">
+            <h2 class="text-7xl font-bold text-center mb-8 text-white text-shadow-soft">🍃 Cultivons Ensemble</h2>
+            <p class="text-center text-2xl text-green-100 mb-24 max-w-4xl mx-auto">
+                Contactez-nous pour donner vie à vos projets verts et créer un environnement naturel exceptionnel
+            </p>
+            <div class="max-w-5xl mx-auto bg-white/90 backdrop-blur-sm p-24 rounded-[4rem] shadow-2xl border-4 border-green-200">
+                <div class="grid md:grid-cols-2 gap-20 text-center">
+                    <div>
+                        <div class="text-8xl mb-6 growing-icon">📞</div>
+                        <h3 class="text-green-700 text-lg uppercase tracking-wider mb-6 font-bold">🌱 Appelez-nous</h3>
+                        <p class="text-green-700 font-bold text-4xl">
+                            <a href="tel:+33612345678" class="hover:text-green-600 transition-colors">06 12 34 56 78</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-8xl mb-6 growing-icon" style="animation-delay: 0.5s;">📧</div>
+                        <h3 class="text-green-700 text-lg uppercase tracking-wider mb-6 font-bold">🌿 Écrivez-nous</h3>
+                        <p class="text-green-700 font-bold text-4xl">
+                            <a href="mailto:paul.leloup@example.com" class="hover:text-green-600 transition-colors">paul.leloup@example.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-green-900 text-green-200 text-center py-20">
+        <div class="container mx-auto px-6">
+            <p class="text-3xl font-bold mb-4">🌱 &copy; 2025 Polyvalence 🌱</p>
+            <p class="text-xl opacity-90">Jardinage naturel et respectueux de l'environnement</p>
+            <div class="mt-8 flex justify-center space-x-4 text-4xl">
+                <span class="animate-bounce">🌻</span>
+                <span class="animate-pulse">🌿</span>
+                <span class="animate-bounce" style="animation-delay: 0.5s;">🌱</span>
+                <span class="animate-pulse" style="animation-delay: 1s;">🍃</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
