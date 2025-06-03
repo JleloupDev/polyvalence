@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyvalence - Jardinier, Laveur de Vitres, Paysagiste</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-bold text-green-700 hover:text-green-600 uppercase">
+                    <img src="images/logo.png" alt="Polyvalence Logo" class="h-10 inline-block">
+                </a>
+            </div>
+            <ul class="flex items-center space-x-6">
+                <li><a href="#services" class="text-gray-700 hover:text-green-600 py-2">Services</a></li>
+                <li><a href="#gallery" class="text-gray-700 hover:text-green-600 py-2">Galerie</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-green-600 py-2">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="relative text-center">
+        <div class="relative w-full h-96">
+            <img src="images/header-image.jpg" alt="Services de jardinage et paysage" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center p-4">
+                <h1 class="text-5xl font-bold mb-4 tracking-tight text-white">Bienvenue chez <span class="uppercase">Polyvalence</span></h1>
+                <p class="text-xl text-green-100">Votre expert en jardinage, lavage de vitres et aménagement paysager.</p>
+            </div>
+        </div>
+    </header>
+    
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-800">Nos Services d'Excellence</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="service bg-white p-10 rounded-xl shadow-2xl hover:shadow-green-200/50 transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Entretien de Jardin</h3>
+                    <p class="text-gray-600 leading-relaxed">Nous offrons des services d'entretien de jardin pour garder votre espace extérieur magnifique toute l'année.</p>
+                </div>
+                <div class="service bg-white p-10 rounded-xl shadow-2xl hover:shadow-green-200/50 transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Création Paysagère</h3>
+                    <p class="text-gray-600 leading-relaxed">Nous réalisons des projets de création paysagère sur mesure pour transformer votre jardin en un véritable havre de paix.</p>
+                </div>
+                <div class="service bg-white p-10 rounded-xl shadow-2xl hover:shadow-green-200/50 transition-all duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4">Lavage de Vitres</h3>
+                    <p class="text-gray-600 leading-relaxed">Profitez d'une vue claire avec notre service de lavage de vitres professionnel et méticuleux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-green-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-800">Galerie de Nos Réalisations</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="gallery-item rounded-xl overflow-hidden shadow-xl hover:shadow-green-300/60 transition-shadow duration-300 transform hover:scale-105">
+                    <img src="images/entretien1.jpg" alt="Entretien de jardin" class="w-full h-72 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden shadow-xl hover:shadow-green-300/60 transition-shadow duration-300 transform hover:scale-105">
+                    <img src="images/creation1.jpg" alt="Création paysagère" class="w-full h-72 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden shadow-xl hover:shadow-green-300/60 transition-shadow duration-300 transform hover:scale-105">
+                    <img src="images/lavage-vitres1.jpg" alt="Lavage de vitres" class="w-full h-72 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-800">Contactez-nous</h2>
+            <div class="max-w-2xl mx-auto bg-white p-12 rounded-xl shadow-2xl text-center">
+                <p class="text-green-700 font-bold text-2xl mb-2">
+                    <a href="tel:+33612345678" class="hover:underline">06 12 34 56 78</a>
+                </p>
+                <p class="text-green-700 font-bold text-2xl">
+                    <a href="mailto:paul.leloup@example.com" class="hover:underline">paul.leloup@example.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-green-200 text-center p-8 mt-16">
+        <p class="text-lg">&copy; 2025 Polyvalence. Tous droits réservés.</p>
+        <p class="text-sm mt-2">Conçu avec les fesses.</p>
+    </footer>
+</body>
+</html>
